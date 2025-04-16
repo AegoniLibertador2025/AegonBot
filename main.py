@@ -14,8 +14,7 @@ async def handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         try:
             with open("memoria.txt", "r", encoding="utf-8") as f:
                 contenido = f.read()
-            await update.message.reply_text("Mi memoria actual:")
-" + contenido)
+            await update.message.reply_text(f"Mi memoria actual:\n{contenido}")
         except:
             await update.message.reply_text("No pude acceder a la memoria.")
     else:
